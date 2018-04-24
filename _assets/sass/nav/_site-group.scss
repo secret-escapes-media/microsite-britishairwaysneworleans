@@ -1,7 +1,7 @@
 // styles for the group drop down nav
 
-$group-nav-height: 224px;
-$group-nav-color:  $orange-darker;
+$group-nav-height: 300px;
+$group-nav-color:  rgba($nola-blue-darker,.5);
 
 .group-nav {
   position: absolute;
@@ -23,6 +23,7 @@ $group-nav-color:  $orange-darker;
     display: flex;
     flex-grow: 1;
     flex-basis: 0;
+    @include background-attributes;
   }
   &__link {
     display: flex;
@@ -30,15 +31,14 @@ $group-nav-color:  $orange-darker;
     align-items: center;
     justify-content: center;
     padding: $s0;
-    font-family: $font-core;
-    font-size: $s0;
-    font-weight: 300;
+    font-family: $font-title-01;
+    font-size: $s5;
+    font-weight: 400;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .25em;
+    letter-spacing: .05em;
     color: $white;
     @include transition;
-    &.is-current      { background-color: rgba($group-nav-color,.66); }
-    .no-touch &:hover { background-color: rgba($group-nav-color,1); }
+    &.is-current      { background-color: rgba($group-nav-color,.5); }
+    .no-touch &:hover { background-color: rgba($group-nav-color,.75); }
   }
 }

@@ -16,7 +16,11 @@
     }
   }
   &--partner { // max-width for this is about 150x46px
-    max-width: 120px;
-    &-sm { max-width: 100px; }
+    max-width: 150px;
+    &-sm { max-width: 120px; }
+  }
+  &--new-orleans-tb { // max-width for this is about 150x46px
+    max-width: 130px;
+    &-sm { max-width: 110px; }
   }
 }

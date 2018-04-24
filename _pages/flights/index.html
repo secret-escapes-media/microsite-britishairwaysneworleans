@@ -1,0 +1,102 @@
+---
+layout: default
+id: flights
+title: Flights
+nav: true
+nav-order: 3
+
+flights:
+
+  - id: flight-path
+    title: Flight Path 01
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
+    price: 9999
+    link: "#link-for-flight-path-01"
+
+  - id: flight-path
+    title: Flight Path 02
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
+    price: 9999
+    link: "#link-for-flight-path-02"
+
+  - id: flight-path
+    title: Flight Path 03
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
+    price: 9999
+    link: "#link-for-flight-path-03"
+
+  - id: flight-path
+    title: Flight Path 04
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
+    price: 9999
+    link: "#link-for-flight-path-04"
+
+
+holidays:
+
+  - id: holiday-package
+    title: Package Holiday 01
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
+    price: 9999
+
+  - id: holiday-package
+    title: Package Holiday 02
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
+    price: 9999
+
+  - id: holiday-package
+    title: Package Holiday 03
+    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
+    price: 9999
+---
+
+<div class="container vpad--xxl">
+
+{% for flight in page.flights %}
+  <div class="row row--no-gutters row--valign-center row--xl-6-6 bg--light">
+
+    <div class="col">
+      <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/img.jpg')">
+        <a id="tracking-offer-image-{{flight.id}}" class="bg-img__link" href="{{flight.link}}"></a>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="boxpad--xxl">
+        <h3 class="title title--md text--bold">{{flight.title}}</h3>
+        <p class="text--italic">{{flight.description}}</p>
+        <p>From <span class="text--bolder text--xxl text--blue">£{{flight.price}}</span></p>
+        <div class="space--sm"></div>
+        <a href="{{flight.link}}" class="btn btn--blue" id="tracking-offer-button-{{flight.id}}">View Flights</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="space--xxl"></div>
+
+{% endfor %}
+
+{% for holiday in page.holidays %}
+<div class="row row--no-gutters row--valign-center row--xl-6-6 bg--light">
+
+  <div class="col">
+    <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/img.jpg')">
+      <a id="tracking-offer-image-{{holiday.id}}" class="bg-img__link" href="{{holiday.link}}"></a>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="boxpad--xxl">
+      <h3 class="title title--md text--bold">{{holiday.title}}</h3>
+      <p class="text--italic">{{holiday.description}}</p>
+      <p>From <span class="text--bolder text--xxl text--blue">£{{holiday.price}}</span></p>
+      <div class="space--sm"></div>
+      <a href="{{holiday.link}}" class="btn btn--blue" id="tracking-offer-button-{{holiday.id}}">View Flights</a>
+    </div>
+  </div>
+
+</div>
+<div class="space--xxl"></div>
+{% endfor %}
+
+</div>

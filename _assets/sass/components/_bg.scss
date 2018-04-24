@@ -2,8 +2,8 @@
 
 .bg {
   &--white { background-color: $white; }
-  &--light { background-color: $grey-lightest; }
-  &--dark  { background-color: $grey-dark; }
+  &--light { background-color: $nola-blue-darker; }
+  &--dark  { background-color: $nola-blue-darker; }
   &--img   { @include background-attributes; }
   &__fixed {
     position: fixed;

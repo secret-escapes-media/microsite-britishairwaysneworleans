@@ -1,1 +1,12 @@
 // general styles for the project that wouldn't be a reuseable component
+
+.width {
+  margin-right: auto;
+  margin-left: auto;
+  &--xs { max-width: ($sm / 2); }
+  &--sm { max-width: $sm; }
+  &--md { max-width: $md; }
+  &--lg { max-width: $lg; }
+  &--xl { max-width: $xl; }
+  &--xxl { max-width: $xxl; }
+}

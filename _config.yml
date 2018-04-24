@@ -1,18 +1,18 @@
 # Site settings
-title: Destination Region
+title: New Orleans
 client:
-  name: Client Name
-  link: "#client-name"
+  name: British Airways
+  link: https://www.britishairways.com/en-gb/home
 core-se-link: https://www.secretescapes.com/current-sales
 description: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Piercing brass and hot nights on Frenchmen, gumbo and sazerac, shotgun homes and French mansions – New Orleans is a heady concoction of spellbinding cultural pursuits.
 
 # file paths
 url:     "http://mp.secretescapes.com" # the base hostname & protocol for your site
-baseurl: "/_templates/destination-region" # the subpath of your site, e.g. /blog/
-img:     "/_templates/destination-region/_assets/img"
-css:     "/_templates/destination-region/_assets/css"
-js:      "/_templates/destination-region/_assets/js"
+baseurl: "/britishairwaysneworleans" # the subpath of your site, e.g. /blog/
+img:     "/britishairwaysneworleans/_assets/img"
+css:     "/britishairwaysneworleans/_assets/css"
+js:      "/britishairwaysneworleans/_assets/js"
 
 
 # Build settings

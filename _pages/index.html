@@ -4,30 +4,116 @@ id: overview
 nav: true
 nav-order: 1
 title: Overview
-intro: Introduction to destination. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+banner:
+  content: >
+    <div class="container text--center">
+      <h1 class="banner-title banner-title--overview">New<br>Orleans</h1>
+      <div class="space--sm"></div>
+      <a href="#video" class="btn btn--lg btn--blue">Watch Video</a>
+    </div>
 ---
 
-<div class="container container--xl text--center text--lg space--xxxxl">
-  <p>{{page.intro}}</p>
+<div class="container container--xl text--center vpad--xxl">
+  <p>{{site.description}}</p>
+  <p>Voodoo sounds echo across syncopated Second Lines, where a riot of colour skips across the Mardis Gras headdresses and the balconies and bright facades of the French Quarter’s townhouses. Southern hospitality abounds from down-to-earth eateries and eclectic dive-bars, where Creole flavours spice the gumbo, and forward-thinking chefs push the envelope on the city’s foodie offerings. High-society hotel bars offer timeless glamour alongside jazz bars that sing frenetic melodies deep into the night – New Orleans offers fortuitous adventure on every street.</p>
+  <p>Discover it for yourself with the only direct flights from Europe by British Airways.</p>
 </div>
 
-<div class="container">
-  {% assign content-pages = site.html_pages | where: 'group', 'true' | sort: 'nav-order' %}
-  {% for page in content-pages %}
-    <div class="bob{% cycle '', ' bob--swap' %}">
-      <div class="bob__img">
-        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');">
-          <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+<div id="video" class="vpad--xxl bg--light">
+  <div class="container">
+    <div class="width width--xxl text--center">
+
+      <div class="title title--xl">Watch the video</div>
+      <p class="text--lg">Video introduction. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem illum quaerat suscipit voluptates adipisci numquam vel quae magnam doloribus, ipsum.</p>
+      <div class="space--xl"></div>
+
+      <div class="video js-youtube-thumbnail" data-thumbnail-img="{{site.img}}/img.jpg">
+        <iframe class="video__iframe" src='https://www.youtube.com/embed/kkn2z2uWpgU?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
+      </div>
+
+      <div class="space--xxl"></div>
+
+      <div class="title title--md">Our Top Picks</div>
+
+      <div class="space--lg">
+        <div class="width width--xxl">
+          <div class="row row--sm-6-6 row--xl-4-4-4 row--no-gutters">
+            <!-- loops through all of the pois on the site and shows the ones with a "video" value -->
+            {% assign explore-pages = site.html_pages | where: 'group-parent', 'explore' %}
+            {% for explore-page in explore-pages %}
+              {% for poi in explore-page.pois.list %}
+                {% if poi.video %}
+                  <div class="col">
+                    <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/{{explore-page.id}}/{{poi.id}}.jpg');">
+                      <a href="{{site.baseurl}}{{explore-page.url}}#{{poi.id}}" class="bg-img__link"></a>
+                      <div class="bg-img__bg-overlay"></div>
+                      <div class="bg-img__content">
+                        <div class="title title--xs">
+                          {{poi.title}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
         </div>
       </div>
-      <div class="bob__text">
-        <h2 class="title title--lg">{{page.title}}</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ducimus, fuga non eos praesentium. Eius quasi mollitia incidunt repudiandae voluptatibus earum nesciunt, sit eos tenetur veritatis vel facere ea nihil.</p>
-        <div class="space--sm"></div>
-        <a href="{{site.baseurl}}{{page.url}}" class="btn btn--sm btn--outline btn--outline-orange">Discover More</a>
-      </div>
+
     </div>
-  {% endfor %}
+
+  </div>
 </div>
 
-<div class="space--xxxxl"></div>
+
+
+<div class="vpad--xxxl">
+  <div class="container">
+    <div class="row row--6-6 row--valign-center">
+      <div class="col">
+        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');">
+          <a href="{{site.baseurl}}/blog" class="bg-img__link"></a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="width width--lg">
+          <h4 class="sub-title sub-title--sm">New Editor's Blog</h4>
+          <div class="space--xs"></div>
+          <h3 class="title title--md">NOLA's Notable Neighbourhoods</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, consequuntur, voluptatem, eum maxime cumque repellat at adipisci nihil tenetur voluptatibus harum ratione et incidunt aliquid, explicabo quaerat numquam porro natus.</p>
+          <div class="space--md"></div>
+          <a href="{{site.baseurl}}/blog" class="btn btn--outline btn--outline-blue">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bg--light">
+  <div class="container vpad--xxxl">
+    <div class="width width--lg text--center">
+      <div class="title title--xl">Explore NOLA</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati commodi quae iusto sint similique, vel expedita aperiam accusamus facere asperiores laudantium ea a dignissimos repudiandae facilis culpa, cupiditate atque ratione.</p>
+      <div class="space--xl"></div>
+    </div>
+    <div class="row row--sm-6-6 row--xxl-3-3-3-3 row--gutters-sm">
+      {% assign content-pages = site.html_pages | where: 'group-parent', 'explore' | sort: 'group-order' %}
+      {% for page in content-pages %}
+      <div class="col">
+        <div class="width width--sm">
+          <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/content/{{page.id}}/bg.jpg');">
+            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            <div class="bg-img__bg-overlay"></div>
+            <div class="bg-img__content">
+              <div class="title title--lg">{{page.nav-title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
