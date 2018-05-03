@@ -1,0 +1,40 @@
+// External offer block styles
+
+$external-offer-bp: $xl;
+
+.external-offer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  // content columns
+  &__col {
+    flex: 1 1 100%;
+    @include bp($external-offer-bp) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  &__img {
+    position: relative;
+    @include background-attributes;
+    // this keeps images aspect ratio on mobile
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 66.666666666667%;
+      @include bp($external-offer-bp) { display: none; }
+    }
+  }
+  &__img-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-content-upper;
+  }
+}

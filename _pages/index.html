@@ -14,52 +14,45 @@ banner:
     </div>
 ---
 
-<div class="container container--xl text--center vpad--xxl">
-  <p>{{site.description}}</p>
-  <p>Voodoo sounds echo across syncopated Second Lines, where a riot of colour skips across the Mardis Gras headdresses and the balconies and bright facades of the French Quarter’s townhouses. Southern hospitality abounds from down-to-earth eateries and eclectic dive-bars, where Creole flavours spice the gumbo, and forward-thinking chefs push the envelope on the city’s foodie offerings. High-society hotel bars offer timeless glamour alongside jazz bars that sing frenetic melodies deep into the night – New Orleans offers fortuitous adventure on every street.</p>
-  <p>Discover it for yourself with the only direct flights from Europe by British Airways.</p>
+<div class="container vpad--xxl">
+  <div class="row row--valign-center">
+    <div class="col col--xl-5">
+      <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/01.jpg');">
+        <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+      </div>
+      <div class="row row--constant-6-6 row--no-gutters">
+        <div class="col">
+          <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/02.jpg');">
+            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/03.jpg');">
+            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col--xl-7">
+      <p>{{site.description}}</p>
+      <p>The French Quarter echoes with a chorus of street musicians, soulful melodies gracing the wrought-iron balconies of the colourful French townhouses. Southern hospitality abounds from down-to-earth eateries and eclectic dive-bars, where Creole flavours spice the gumbo, and forward-thinking chefs push the envelope on the city’s foodie offerings. High-society hotel bars offer timeless glamour alongside jazz bars that sing frenetic melodies deep into the night – New Orleans offers fortuitous adventure on every street.</p>
+      <p>Discover it for yourself with the only year-round, non-stop flights from London, with British Airways.</p>
+      <div class="space--md"></div>
+      <a href="{{site.baseurl}}/flights" class="btn btn--outline btn--outline-blue">Take Me There</a>
+    </div>
+  </div>
 </div>
 
 <div id="video" class="vpad--xxl bg--light">
   <div class="container">
     <div class="width width--xxl text--center">
 
-      <div class="title title--xl">Watch the video</div>
-      <p class="text--lg">Video introduction. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem illum quaerat suscipit voluptates adipisci numquam vel quae magnam doloribus, ipsum.</p>
+      <div class="title title--xl">Watch our New Orleans adventure</div>
+      <p class="text--lg width width--lg">Let our editor Ollie Jones show you around the Crescent City…</p>
       <div class="space--xl"></div>
 
-      <div class="video js-youtube-thumbnail" data-thumbnail-img="{{site.img}}/img.jpg">
+      <div class="video js-youtube-thumbnail" data-thumbnail-img="{{site.img}}/content/overview/video.jpg">
         <iframe class="video__iframe" src='https://www.youtube.com/embed/kkn2z2uWpgU?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
-      </div>
-
-      <div class="space--xxl"></div>
-
-      <div class="title title--md">Our Top Picks</div>
-
-      <div class="space--lg">
-        <div class="width width--xxl">
-          <div class="row row--sm-6-6 row--xl-4-4-4 row--no-gutters">
-            <!-- loops through all of the pois on the site and shows the ones with a "video" value -->
-            {% assign explore-pages = site.html_pages | where: 'group-parent', 'explore' %}
-            {% for explore-page in explore-pages %}
-              {% for poi in explore-page.pois.list %}
-                {% if poi.video %}
-                  <div class="col">
-                    <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/{{explore-page.id}}/{{poi.id}}.jpg');">
-                      <a href="{{site.baseurl}}{{explore-page.url}}#{{poi.id}}" class="bg-img__link"></a>
-                      <div class="bg-img__bg-overlay"></div>
-                      <div class="bg-img__content">
-                        <div class="title title--xs">
-                          {{poi.title}}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-          </div>
-        </div>
       </div>
 
     </div>
@@ -73,16 +66,19 @@ banner:
   <div class="container">
     <div class="row row--6-6 row--valign-center">
       <div class="col">
-        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/img.jpg');">
+        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/ollie-.jpg');">
           <a href="{{site.baseurl}}/blog" class="bg-img__link"></a>
         </div>
       </div>
       <div class="col">
         <div class="width width--lg">
-          <h4 class="sub-title sub-title--sm">New Editor's Blog</h4>
-          <div class="space--xs"></div>
-          <h3 class="title title--md">NOLA's Notable Neighbourhoods</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, consequuntur, voluptatem, eum maxime cumque repellat at adipisci nihil tenetur voluptatibus harum ratione et incidunt aliquid, explicabo quaerat numquam porro natus.</p>
+          {% assign blog-page = site.html_pages | where: "id", "blog" %}
+          {% for page in blog-page %}
+            <h4 class="sub-title sub-title--sm">New Editor's Blog</h4>
+            <div class="space--xs"></div>
+            <h3 class="title title--lg">{{page.title}}</h3>
+            <p>{{page.intro}}</p>
+          {% endfor %}
           <div class="space--md"></div>
           <a href="{{site.baseurl}}/blog" class="btn btn--outline btn--outline-blue">Read More</a>
         </div>
@@ -96,7 +92,6 @@ banner:
   <div class="container vpad--xxxl">
     <div class="width width--lg text--center">
       <div class="title title--xl">Explore NOLA</div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati commodi quae iusto sint similique, vel expedita aperiam accusamus facere asperiores laudantium ea a dignissimos repudiandae facilis culpa, cupiditate atque ratione.</p>
       <div class="space--xl"></div>
     </div>
     <div class="row row--sm-6-6 row--xxl-3-3-3-3 row--gutters-sm">

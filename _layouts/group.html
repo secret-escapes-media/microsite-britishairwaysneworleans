@@ -7,13 +7,25 @@ layout: default
   {% for page in group-pages %}
     <div class="bob{% cycle '', ' bob--swap' %}">
       <div class="bob__img">
-        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{page.id}}/{{page.pois.list[0].id}}.jpg');">
+        <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/{{page.pois.list[0].id}}.jpg');">
           <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+        </div>
+        <div class="row row--constant-6-6 row--no-gutters">
+          <div class="col">
+            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/{{page.pois.list[1].id}}.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/{{page.pois.list[2].id}}.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="bob__text">
         <h2 class="title title--lg">{{page.title}}</h2>
-        <p>{{page.intro | truncatewords: 60}}</p>
+        <p>{{page.intro | truncatewords: 38}}</p>
         <div class="space--sm"></div>
         <a href="{{site.baseurl}}{{page.url}}" class="btn btn--blue">Discover More</a>
       </div>

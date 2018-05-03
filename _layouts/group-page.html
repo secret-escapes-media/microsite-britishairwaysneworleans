@@ -3,8 +3,29 @@ layout: default
 ---
 
 <div class="bg--dark">
-  <div class="container vpad--xxl">
-    <p class="width width--xl text--center text--lg">{{page.intro}}</p>
+  <div class="container vpad--xl">
+    <div class="row row--6-6 row--valign-center">
+      <div class="col">
+        <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/01.jpg');">
+          <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+        </div>
+        <div class="row row--constant-6-6 row--no-gutters">
+          <div class="col">
+            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/02.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/03.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <p class="text--md">{{page.intro}}</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -17,7 +38,9 @@ layout: default
   {% for poi in page.pois.list %}
     <div class="bob{% cycle '', ' bob--swap' %}">
       <div id="{{poi.id}}" class="bob__img">
-        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{page.id}}/{{poi.id}}.jpg');"></div>
+        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{page.id}}/{{poi.id}}.jpg');">
+          {% if poi.image-credit %}<div class="bg-img__credit js-image-credit">{{poi.image-credit}}</div>{% endif %}
+        </div>
       </div>
       <div class="bob__text">
         <div class="title title--md">{{poi.title}}</div>

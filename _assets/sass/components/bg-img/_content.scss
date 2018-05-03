@@ -34,8 +34,35 @@
     right: 0;
     bottom: 0;
     z-index: $z-content;
-    background-color: rgba($black,.4);
+    background-color: rgba($black,0);
     @include transition;
   }
-  &:hover &__bg-overlay { background-color: rgba($black,.6); }
+  &:hover &__bg-overlay { background-color: rgba($black,.4); }
+  &__credit{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    padding: $s0;
+    font-size: $s-1;
+    line-height: 1;
+    color: rgba($white,.75);
+    background-color: rgba($black,.25);
+    @include transition;
+    opacity: 0; // have the text appear on hover
+    .touch & {
+      opacity: 1; // stop this on mobile as no hover
+    }
+    > a[href]:not([class]) { color: $white; text-decoration: underline; }
+  }
+  &:hover &__credit {
+    // text appears on hover
+    opacity: 1;
+    &:hover {
+      color: $white;
+      background-color: rgba($black,.5);
+    }
+  }
 }
+
+

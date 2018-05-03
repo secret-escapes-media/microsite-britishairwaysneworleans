@@ -1,102 +1,63 @@
 ---
 layout: default
 id: flights
-title: Flights
+title: Flights & Holidays
 nav: true
 nav-order: 3
-
-flights:
-
-  - id: flight-path
-    title: Flight Path 01
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
-    price: 9999
-    link: "#link-for-flight-path-01"
-
-  - id: flight-path
-    title: Flight Path 02
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
-    price: 9999
-    link: "#link-for-flight-path-02"
-
-  - id: flight-path
-    title: Flight Path 03
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
-    price: 9999
-    link: "#link-for-flight-path-03"
-
-  - id: flight-path
-    title: Flight Path 04
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
-    price: 9999
-    link: "#link-for-flight-path-04"
-
+intro: Fly the only direct service between London and New Orleans, departing five days per week from Heathrow Airport. Travel in Club World, World Traveller Plus or World Traveller, enjoy award-winning service, and complimentary food and drinks onboard. Choose to fly with hand baggage only or pick a price that includes a 23kg checked baggage allowance and free seat selection 24 hours before you fly.
 
 holidays:
 
-  - id: holiday-package
-    title: Package Holiday 01
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
-    price: 9999
+  - id: international-house-hotel
+    title: International House hotel
+    description: International House, New Orleans first Boutique Hotel, is situated on Camp Street in the business district and is only two blocks from the famous French Quarter. Known for its mix of contemporary and traditional design, The Loa Bar is the place to be seen for creative artists, entrepreneurs and hotel guests alike.
+    details: Available from 3 - 29 September 2018 – New Orleans flights included
+    price: 699
+    terms: New Orleans - British Airways Holidays offers five nights at the 4* International House from £699 per person, travelling on selected dates between September 3 - September 29 2018. Includes World Traveller return flights from London Heathrow and accommodation. Book by June 10 2018. For reservations visit <a href="https://www.britishairways.com/en-gb/destinations/new-orleans">ba.com/neworleans</a> or call 0344 493 0122.
+    link: https://www.britishairways.com/en-gb/destinations/hotel-information/New-Orleans/International-House/US-MSY-5539550&depDate=03-09-18
 
-  - id: holiday-package
-    title: Package Holiday 02
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
-    price: 9999
+  - id: monteleone-hotel
+    title: Monteleone hotel
+    description: The Monteleone Hotel sits at the foot of Royal Street and is perfectly located to discover all New Orleans has to offer. The hotel is a historic landmark with classic French charm. It's also famed for housing New Orleans only revolving bar in the Carousel Bar & Lounge- a long-time favourite New Orleans hot spot.
+    details: Available from 3 - 23 December 2018 – New Orleans flights included
+    price: 949
+    terms: New Orleans - British Airways Holidays offers five nights at the 4* Monteleone from £949 per person, travelling on selected dates between December 3 - December 31 2018. Includes World Traveller return flights from London Heathrow and accommodation. Book by June 10 2018. For reservations visit <a href="https://www.britishairways.com/en-gb/destinations/new-orleans">ba.com/neworleans</a> or call 0344 493 0122.
+    link: https://www.britishairways.com/en-gb/destinations/hotel-information/New-Orleans/Monteleone/US-MSY-5233341&depDate=03-12-18
+    video: true
 
-  - id: holiday-package
-    title: Package Holiday 03
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quibusdam assumenda nesciunt amet, sint dignissimos, sapiente aliquam neque ullam adipisci odit praesentium aspernatur harum fugit a veniam suscipit doloribus vel?
-    price: 9999
+  - id: inter-continental-new-orleans-hotel
+    title: InterContinental New Orleans hotel
+    description: The Intercontinental is just a 15 minute walk from Lafayette Square and Jackson Square- the perfect location to stroll into the French Quarter and sample the local cuisine and flea markets at the French Market. The hotel restaurant, Trenasse, is also worth a visit with their contemporary twist on Cajun and Creole dishes. For breakfast or lunch, try Petes restaurant which combines a lively English Pub atmosphere and Louisiana Hospitality.
+    details: Available from 3 - 29 September 2018 – New Orleans flights included
+    price: 849
+    terms: New Orleans - British Airways Holidays offers five nights at the 4* InterContinental New Orleans from £849 per person, travelling on selected dates between September 3 - September 29 2018. Includes World Traveller return flights from London Heathrow and accommodation. Book by June 10 2018. For reservations visit <a href="https://www.britishairways.com/en-gb/home">ba.com</a> or call 0344 493 0122.
+    link: https://www.britishairways.com/en-gb/destinations/hotel-information/New%20Orleans/InterContinental%20New%20Orleans/US-MSY-5255566&depDate=03-09-18
 ---
 
+<div class="bg--dark">
+  <div class="container vpad--xxl">
+    <div class="width width--xl text--center">
+      <p class="text--md">{{page.intro}}</p>
+      <div class="space--md"></div>
+      <a href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--blue">Find lowest fares now</a>
+    </div>
+  </div>
+</div>
+
 <div class="container vpad--xxl">
-
-{% for flight in page.flights %}
-  <div class="row row--no-gutters row--valign-center row--xl-6-6 bg--light">
-
-    <div class="col">
-      <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/img.jpg')">
-        <a id="tracking-offer-image-{{flight.id}}" class="bg-img__link" href="{{flight.link}}"></a>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="boxpad--xxl">
-        <h3 class="title title--md text--bold">{{flight.title}}</h3>
-        <p class="text--italic">{{flight.description}}</p>
-        <p>From <span class="text--bolder text--xxl text--blue">£{{flight.price}}</span></p>
-        <div class="space--sm"></div>
-        <a href="{{flight.link}}" class="btn btn--blue" id="tracking-offer-button-{{flight.id}}">View Flights</a>
-      </div>
-    </div>
-
+  {% for holiday in page.holidays %}
+    {% include offer/external-offer.html %}
+    <div class="space--xxl"></div>
+  {% endfor %}
+  <div class="text--center">
+    <a href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--lg btn--blue">Book your New Orleans holiday</a>
+    <div class="space--lg"></div>
+    <img class="logo logo--atol" src="{{site.img}}/logo/atol.svg" alt="ATOL Protected logo">
   </div>
-  <div class="space--xxl"></div>
-
-{% endfor %}
-
-{% for holiday in page.holidays %}
-<div class="row row--no-gutters row--valign-center row--xl-6-6 bg--light">
-
-  <div class="col">
-    <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/img.jpg')">
-      <a id="tracking-offer-image-{{holiday.id}}" class="bg-img__link" href="{{holiday.link}}"></a>
-    </div>
-  </div>
-
-  <div class="col">
-    <div class="boxpad--xxl">
-      <h3 class="title title--md text--bold">{{holiday.title}}</h3>
-      <p class="text--italic">{{holiday.description}}</p>
-      <p>From <span class="text--bolder text--xxl text--blue">£{{holiday.price}}</span></p>
-      <div class="space--sm"></div>
-      <a href="{{holiday.link}}" class="btn btn--blue" id="tracking-offer-button-{{holiday.id}}">View Flights</a>
-    </div>
-  </div>
-
 </div>
-<div class="space--xxl"></div>
-{% endfor %}
 
-</div>
+
+
+<!-- <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{page.id}}/offers/{{holiday.id}}.jpg')">
+  <a id="tracking-offer-image-{{holiday.id}}" class="bg-img__link" href="{{holiday.link}}"></a>
+</div> -->

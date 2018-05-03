@@ -3,8 +3,9 @@
 .text {
   // sizes
   &--xxl { font-size: $s3; }
-  &--xl  { font-size: $s2; line-height: 1.6; }
-  &--lg  { font-size: $s1; line-height: 1.6; }
+  &--xl  { font-size: $s2; line-height: 1.66; }
+  &--lg  { font-size: $s1; line-height: 1.66; }
+  &--md  { font-size: 1.1rem; line-height: 1.66; }
   &--sm  { font-size: $s-1; }
 
   // styles
@@ -17,6 +18,7 @@
   &--upper        { text-transform: uppercase; }
 
   // colours
+  &--light { color: $grey-light; }
   &--white { color: $grey-lightest; }
   &--black { color: $grey-dark; }
   &--orange { color: $orange; }

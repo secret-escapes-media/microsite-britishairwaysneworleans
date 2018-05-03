@@ -24,5 +24,25 @@
       {% endif %}
     {% endfor %}
 
+    {% if page.holidays %}
+      {% for holiday in page.holidays %}
+        <div class="modal modal--standard is-closed" data-modal-id="{{holiday.id}}">
+          <div class="js-close-modal modal__close"></div>
+          <div class="modal__content">
+            <div class="vpad--md">
+              <h2 class="core-title core-title--md">{{holiday.title}}</h2>
+              <div class="space--xxs"></div>
+              <h3 class="core-sub-title core-sub-title--sm">Terms & Conditions</h3>
+              <div class="space--sm"></div>
+              <p>{{holiday.terms}}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+
+
+
   </div>
 </div>
