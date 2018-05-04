@@ -5,7 +5,8 @@ client:
   link: https://www.britishairways.com/en-gb/home
 core-se-link: https://www.secretescapes.com/current-sales
 description: >
-  Piercing brass and hot, jazz-fuelled nights on Frenchmen St, steaming bowls of gumbo and sipping a sazerac in the Quarter, shotgun homes and decorated French mansions – New Orleans is a heady concoction of spellbinding cultural pursuits.
+  Piercing brass and hot, jazz-fuelled nights on Frenchmen Street, steaming bowls of gumbo and sipping a sazerac in the Quarter, shotgun homes and decorated French mansions – New Orleans is a heady concoction of spellbinding cultural pursuits.
+
 
 # file paths
 url:     "http://mp.secretescapes.com" # the base hostname & protocol for your site
