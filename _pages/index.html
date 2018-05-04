@@ -10,7 +10,7 @@ banner:
     <div class="container text--center">
       <h1 class="banner-title banner-title--overview">New<br>Orleans</h1>
       <div class="space--sm"></div>
-      <a href="#video" class="btn btn--lg btn--blue">Watch Video</a>
+      <a href="#video" id="video-overview-button" class="btn btn--lg btn--blue">Watch Video</a>
     </div>
 ---
 
@@ -43,17 +43,19 @@ banner:
   </div>
 </div>
 
-<div id="video" class="vpad--xxl bg--light">
-  <div class="container">
+<div class="bg--light">
+  <div class="wp" id="video"></div>
+  <div class="container vpad--xxl">
+
     <div class="width width--xxl text--center">
-
       <div class="title title--xl">Watch our New Orleans adventure</div>
-      <p class="text--lg width width--lg">Let our editor Ollie Jones show you around the Crescent City…</p>
+      <p class="text--xl width width--lg">Let our editor Ollie Jones show you around the Crescent City…</p>
       <div class="space--xl"></div>
+    </div>
 
-      <div class="video js-youtube-thumbnail" data-thumbnail-img="{{site.img}}/content/overview/video.jpg">
-        <iframe class="video__iframe" src='https://www.youtube.com/embed/kkn2z2uWpgU?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
-      </div>
+    <div class="video js-youtube-thumbnail" id="video-overview" data-thumbnail-img="{{site.img}}/content/overview/video.jpg">
+      <iframe class="video__iframe" src='https://www.youtube.com/embed/kkn2z2uWpgU?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
+    </div>
 
     </div>
 
@@ -66,7 +68,7 @@ banner:
   <div class="container">
     <div class="row row--6-6 row--valign-center">
       <div class="col">
-        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/ollie-.jpg');">
+        <div class="bg-img bg-img--16-9 bg-img--lg-1-1 bg-img--xxl-3-2" style="background-image: url('{{site.img}}/content/overview/ollie.jpg');">
           <a href="{{site.baseurl}}/blog" class="bg-img__link"></a>
         </div>
       </div>
@@ -77,7 +79,7 @@ banner:
             <h4 class="sub-title sub-title--sm">New Editor's Blog</h4>
             <div class="space--xs"></div>
             <h3 class="title title--lg">{{page.title}}</h3>
-            <p>{{page.intro}}</p>
+            <p class="text--lg">{{page.intro}}</p>
           {% endfor %}
           <div class="space--md"></div>
           <a href="{{site.baseurl}}/blog" class="btn btn--outline btn--outline-blue">Read More</a>

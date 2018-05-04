@@ -3,7 +3,8 @@ if ( $('html.touch').length === 0 ) {
 
   // Loops through all videos on page
   $('.js-youtube-thumbnail').each(function(index, el) {
-    var video             = $(this).find('.video__iframe'),
+    var container         = $(this),
+        video             = $(this).find('.video__iframe'),
         videoSrc          = video.attr('src'),
         thumbnailImg      = $(this).data('thumbnail-img'),
         thumbnailElement  = '<div class="video__thumbnail" style="background-image: url(\'' + thumbnailImg + '\')"><div class="video__play js-play-video"></div></div>';
@@ -14,11 +15,12 @@ if ( $('html.touch').length === 0 ) {
     // Add thumbnail element to hold image & play button
     $(this).prepend(thumbnailElement);
     var thumbnail   = $(this).find('.video__thumbnail'),
-        playButton  = $(this).find('.js-play-video');
+        play        = $(this);
 
     // play button event
-      playButton.on('click', function(e) {
+      play.on('click', function(e) {
         e.preventDefault();
+        container.addClass('is-active');
         // add auto play query to iframe
         video.attr('src', videoSrc + '&autoplay=1');
         // fade out iframe and show video
@@ -31,7 +33,7 @@ if ( $('html.touch').length === 0 ) {
 
   // check for autoplay queryString
   if (getQueryStringByName('autoplay')) {
-    console.log('there is query string');
+    console.log('querystring video play');
     // play the video
     var video     = $('.js-autoplay .video__iframe'),
         videoSrc  = video.attr('src'),

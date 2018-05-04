@@ -30,6 +30,9 @@ img {
   vertical-align: middle;
 }
 
+// waypoint element to put ID on (instead of container which blocks tracking)
+.wp { position: relative; }
+
 // general transisition
 $transition-time: .25s;
 @mixin transition() { transition: all $transition-time ease; }

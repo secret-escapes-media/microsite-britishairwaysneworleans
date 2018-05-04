@@ -18,12 +18,33 @@
     p + p { margin-top: $s0; }
   }
   &__image {
+    $image-extrude: 125px;
     width: 100%;
-    max-width: 48%;
-    margin-right: 2%;
-    margin-bottom: 2%;
-    &--left { float: left; }
-    &--right { float: right; }
+    margin-top: 4%;
+    margin-bottom: 4%;
+    @include bp($xxl){
+      max-width: 66%;
+      &--left {
+        float: left;
+        margin-right: 4%;
+        margin-left: -$image-extrude;
+      }
+      &--right {
+        float: right;
+        margin-left: 4%;
+        margin-right: -$image-extrude;
+      }
+    }
+  }
+  &__image-caption {
+    text-align: center;
+    font-weight: 400;
+    font-size: $s-1;
+    color: $grey-lighter;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: $s-3 0;
+    border-bottom: 1px solid rgba($white,0.2);
   }
 }
 
@@ -54,6 +75,7 @@
   }
 }
 
+
 .blog {
   &__bg {
     background-image: url('../img/content/blog/bg.jpg');
@@ -74,5 +96,69 @@
   &__wrap {
     position: relative;
     height: 100%;
+  }
+}
+
+
+.video-icon {
+  $icon-size: 40px;
+  @include transition();
+  height: $icon-size;
+  width: $icon-size;
+  background-size: 50%;
+  background-image: url("../img/icons/video.svg");
+  background-color: $grey-darkest;
+  border-radius: 50%;
+  position: absolute;
+  z-index: $z-overlay;
+  top: $s2;
+  left: $s2;
+  opacity: 0.7;
+  &:hover { opacity: 1; }
+  
+  // triangle on hover
+  .no-touch {
+    &:before {
+      @include transition();
+      content: "";
+      display: block;
+      width: 0; height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left:8px solid $grey-darkest;
+      position: absolute;
+      top: 50%; margin-top: -8px;
+      left: $icon-size - 10px;;
+      opacity: 0;
+    }
+    &:hover:before {
+      left: $icon-size - 2px;
+      opacity: 1;
+    }
+  }
+
+  // hover caption - disabled on touch device as no hover
+  &__caption {
+    display: none;
+    .no-touch & {
+      display: block;
+      @include transition();
+      height: $icon-size/1.5;
+      padding: 4px $s-1;
+      font-weight: 400;
+      font-size: $s-1;
+      color: $grey-lighter;
+      white-space: nowrap;
+      border-radius: 4px;
+      background-color: $grey-darkest;
+      position: absolute;
+      left: $icon-size;
+      top: $icon-size/6;
+      opacity: 0;
+    }
+  }
+  &:hover &__caption {
+    left: $icon-size + 10px;
+    opacity: 1;
   }
 }

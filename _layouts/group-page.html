@@ -39,6 +39,11 @@ layout: default
     <div class="bob{% cycle '', ' bob--swap' %}">
       <div id="{{poi.id}}" class="bob__img">
         <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{page.id}}/{{poi.id}}.jpg');">
+          {% if poi.video %}
+          <a href="{{site.baseurl}}/#video" class="icon video-icon">
+            <div class="video-icon__caption">Discover {{poi.title}} in our New Orleans video</div>
+          </a>
+          {% endif %}
           {% if poi.image-credit %}<div class="bg-img__credit js-image-credit">{{poi.image-credit}}</div>{% endif %}
         </div>
       </div>
