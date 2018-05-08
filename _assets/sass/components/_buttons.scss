@@ -53,4 +53,11 @@
       &:before { border-color: $nola-blue; }
     }
   }
+  &--outline-white {
+    &:before { border-color: rgba($white,.33); }
+    &:hover {
+      background-color: rgba($white,.33);
+      &:before { border-color: transparent; }
+    }
+  }
 }

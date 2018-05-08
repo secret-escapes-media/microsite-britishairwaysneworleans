@@ -3,6 +3,7 @@
 .width {
   margin-right: auto;
   margin-left: auto;
+  &--xxs { max-width: ($sm / 3); }
   &--xs { max-width: ($sm / 2); }
   &--sm { max-width: $sm; }
   &--md { max-width: $md; }
@@ -161,5 +162,22 @@
   &:hover &__caption {
     left: $icon-size + 10px;
     opacity: 1;
+  }
+}
+
+
+.border {
+  border-top: 1px solid #3e4452;
+}
+
+.local-pick {
+  position: relative;
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-content-upper;
   }
 }

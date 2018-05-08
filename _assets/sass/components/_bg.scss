@@ -4,6 +4,7 @@
   &--white { background-color: $white; }
   &--light { background-color: $nola-blue-darker; }
   &--dark  { background-color: $nola-blue-darker; }
+  &--darker  { background-color: $nola-blue-darkest; }
   &--img   { @include background-attributes; }
   &__fixed {
     position: fixed;

@@ -4,26 +4,44 @@ layout: default
 
 <div class="bg--dark">
   <div class="container vpad--xl">
-    <div class="row row--6-6 row--valign-center">
+    <div class="row row--xxl-6-6 row--valign-center">
       <div class="col">
-        <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/01.jpg');">
-          <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
-        </div>
-        <div class="row row--constant-6-6 row--no-gutters">
-          <div class="col">
-            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/02.jpg');">
-              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
-            </div>
+        <div class="width width--lg">
+          <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/01.jpg');">
+            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
           </div>
-          <div class="col">
-            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/03.jpg');">
-              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+          <div class="row row--constant-6-6 row--no-gutters">
+            <div class="col">
+              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/02.jpg');">
+                <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/03.jpg');">
+                <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
         <p class="text--md">{{page.intro}}</p>
+        <div class="space--sm"></div>
+        <div class="boxpad--md bg--darker local-pick">
+          <a href="#{{page.local-pick.id}}" class="local-pick__link"></a>
+          <div class="row row--valign-center row--gutters-xs">
+            <div class="col col--2">
+              <div class="width width--xxs">
+                <div class="bg-img bg-img--circle" style="background-image: url('{{site.img}}/content/robin-barnes.jpg');"></div>
+              </div>
+            </div>
+            <div class="col col--10 text--center text--bp-left">
+              <h4 class="core-sub-title core-sub-title--sm">Our Local’s Top Pick</h4>
+              <h3 class="title title--xs">{{page.local-pick.title}}</h3>
+              <p class="text--sm">{{page.local-pick.description}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

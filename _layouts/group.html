@@ -2,6 +2,24 @@
 layout: default
 ---
 
+<div class="bg--dark">
+  <div class="container vpad--xl">
+    <div class="row row--gutters-sm">
+      <div class="col col--xl-2">
+        <div class="width width--xs">
+          <div class="bg-img bg-img--circle" style="background-image: url('{{site.img}}/content/robin-barnes.jpg');"></div>
+        </div>
+      </div>
+      <div class="col col--xl-10 text--center text--xl-left">
+        <h3 class="title title--sm">Meet Robin Barnes, our local guide</h3>
+        <p>Coined the Songbird of New Orleans, Robin Barnes is a jazz and soul tour-de-force, one who lives and breathes this vibrant city. We caught up with her in our video and she also picked her favourite spots in the NOLA travel guide, with top local’s tips. Don’t miss her singing across the city and beyond, and let her music soundtrack your very own New Orleans escape…</p>
+        <div class="space--sm"></div>
+        <a href="http://robinbarnesmusic.com/" class="btn btn--sm btn--outline btn--outline-white" target="_blank">Take a listen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container vpad--xxxl">
   {% assign group-pages = site.html_pages | where: 'group-parent', page.id | sort: 'group-order' %}
   {% for page in group-pages %}
