@@ -1,0 +1,105 @@
+---
+layout: default
+---
+
+<div class="bg--dark">
+  <div class="container vpad--xl">
+    <div class="row row--xxl-6-6 row--valign-center">
+      <div class="col">
+        <div class="width width--lg">
+          <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/01.jpg');">
+            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+          </div>
+          <div class="row row--constant-6-6 row--no-gutters">
+            <div class="col">
+              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/02.jpg');">
+                <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/03.jpg');">
+                <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <p class="text--md">{{page.intro}}</p>
+        <div class="space--sm"></div>
+        <div class="boxpad--md bg--darker local-pick">
+          <a href="#{{page.local-pick.id}}" class="local-pick__link"></a>
+          <div class="row row--valign-center row--gutters-xs">
+            <div class="col col--2">
+              <div class="width width--xxs">
+                <div class="bg-img bg-img--circle" style="background-image: url('{{site.img}}/content/robin-barnes.jpg');"></div>
+              </div>
+            </div>
+            <div class="col col--10 text--center text--bp-left">
+              <h4 class="core-sub-title core-sub-title--sm">Our Local’s Top Pick</h4>
+              <h3 class="title title--xs">{{page.local-pick.title}}</h3>
+              <div class="space--xxxs">
+                <p class="text--sm">{{page.local-pick.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="space--xxxl"></div>
+  <div class="text--center">
+    <div class="title title--lg">{{page.pois.title}}</div>
+  </div>
+  <div class="space--xl"></div>
+  {% for poi in page.pois.list %}
+    <div class="bob{% cycle '', ' bob--swap' %}">
+      <div id="{{poi.id}}" class="bob__img">
+        <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{page.id}}/{{poi.id}}.jpg');">
+          {% if poi.video %}
+          <a href="{{site.baseurl}}/#video" class="icon video-icon">
+            <div class="video-icon__caption">Discover {{poi.title}} in our New Orleans video</div>
+          </a>
+          {% endif %}
+          {% if poi.image-credit %}<div class="bg-img__credit js-image-credit">{{poi.image-credit}}</div>{% endif %}
+        </div>
+      </div>
+      <div class="bob__text">
+        <div class="title title--md">{{poi.title}}</div>
+        <p>{{poi.description}}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="space--xxxxl"></div>
+
+<div class="bg--light">
+  <div class="container vpad--xxxl">
+    <div class="width width--lg text--center">
+      <div class="title title--lg">Keep Exploring</div>
+      <div class="space--lg"></div>
+    </div>
+    <div class="width width--xxl">
+      <div class="row row--sm-6-6 row--xl-4-4-4">
+        {% assign content-pages = site.html_pages | where: 'group-parent', 'explore' | sort: 'group-order' %}
+        {% for sub-page in content-pages %}
+          {% unless sub-page.url == page.url %}
+            <div class="col">
+              <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/content/{{sub-page.id}}/bg.jpg');">
+                <a href="{{site.baseurl}}{{sub-page.url}}" class="bg-img__link"></a>
+                <div class="bg-img__bg-overlay"></div>
+                <div class="bg-img__content">
+                  <div class="title title--lg">{{sub-page.nav-title}}</div>
+                </div>
+              </div>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

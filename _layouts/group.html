@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="bg--dark">
+  <div class="container vpad--xl">
+    <div class="row row--gutters-sm">
+      <div class="col col--xl-2">
+        <div class="width width--xs">
+          <div class="bg-img bg-img--circle" style="background-image: url('{{site.img}}/content/robin-barnes.jpg');"></div>
+        </div>
+      </div>
+      <div class="col col--xl-10 text--center text--xl-left">
+        <h3 class="title title--sm">Meet Robin Barnes, our local guide</h3>
+        <p>Coined the Songbird of New Orleans, Robin Barnes is a jazz and soul tour-de-force, one who lives and breathes this vibrant city. We caught up with her in our video and she also picked her favourite spots in the NOLA travel guide, with top local’s tips. Don’t miss her singing across the city and beyond, and let her music soundtrack your very own New Orleans escape…</p>
+        <div class="space--sm"></div>
+        <a id="track-robin-btn" href="http://robinbarnesmusic.com/" class="btn btn--sm btn--outline btn--outline-white" target="_blank">Take a listen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container vpad--xxxl">
+  {% assign group-pages = site.html_pages | where: 'group-parent', page.id | sort: 'group-order' %}
+  {% for page in group-pages %}
+    <div class="bob{% cycle '', ' bob--swap' %}">
+      <div class="bob__img">
+        <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/{{page.pois.list[0].id}}.jpg');">
+          <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+        </div>
+        <div class="row row--constant-6-6 row--no-gutters">
+          <div class="col">
+            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/{{page.pois.list[1].id}}.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/{{page.pois.list[2].id}}.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bob__text">
+        <h2 class="title title--lg">{{page.title}}</h2>
+        <p>{{page.intro | truncatewords: 38}}</p>
+        <div class="space--sm"></div>
+        <a href="{{site.baseurl}}{{page.url}}" class="btn btn--blue">Discover More</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,57 @@
+---
+layout: default
+id: flights
+title: Flights & Holidays
+nav: true
+nav-order: 3
+intro: Fly the only direct service between London and New Orleans, departing five days per week from Heathrow Airport. Travel in Club World, World Traveller Plus or World Traveller, enjoy award-winning service, and complimentary food and drinks onboard. Choose to fly with hand baggage only or pick a price that includes a 23kg checked baggage allowance and free seat selection 24 hours before you fly.
+
+holidays:
+
+  - id: international-house-hotel
+    title: International House Hotel
+    description: International House, New Orleans' first boutique Hotel, is situated on Camp Street in the business district and is only two blocks from the famous French Quarter. Known for its mix of contemporary and traditional design, The Loa Bar is the place to be seen for creative artists, entrepreneurs and hotel guests alike.
+    details: Available from 3 - 29 September 2018 – New Orleans flights included
+    price: 699
+    terms: New Orleans - British Airways Holidays offers five nights at the 4* International House from £699 per person, travelling on selected dates between September 3 - September 29 2018. Includes World Traveller return flights from London Heathrow and accommodation. Book by June 17, 2018. For reservations visit <a href="https://www.britishairways.com/en-gb/destinations/new-orleans">ba.com/neworleans</a> or call 0344 493 0122.
+    link: https://www.britishairways.com/en-gb/destinations/hotel-information/New-Orleans/International-House/US-MSY-5539550&depDate=03-09-18
+
+  - id: hotel-monteleone
+    title: Hotel Monteleone
+    description: The Monteleone Hotel sits at the foot of Royal Street and is perfectly located to discover all New Orleans has to offer. The hotel is a historic landmark with classic French charm. It's also famed for housing New Orleans’ only revolving bar in the Carousel Bar & Lounge – a long-time favourite New Orleans hot spot.
+    details: Available from 3 - 23 December 2018 – New Orleans flights included
+    price: 949
+    terms: New Orleans - British Airways Holidays offers five nights at the 4* Monteleone from £949 per person, travelling on selected dates between December 3 - December 31 2018. Includes World Traveller return flights from London Heathrow and accommodation. Book by June 17, 2018. For reservations visit <a href="https://www.britishairways.com/en-gb/destinations/new-orleans">ba.com/neworleans</a> or call 0344 493 0122.
+    link: https://www.britishairways.com/en-gb/destinations/hotel-information/New-Orleans/Monteleone/US-MSY-5233341&depDate=03-12-18
+    video: true
+
+  - id: intercontinental-new-orleans
+    title: InterContinental New Orleans
+    description: The Intercontinental is just a 15 minute walk from Lafayette Square and Jackson Square - the perfect location to stroll into the French Quarter and sample the local cuisine and flea markets at the French Market. The hotel restaurant, Trenasse, is also worth a visit with their contemporary twist on Cajun and Creole dishes. For breakfast or lunch, try Petes restaurant which combines a lively English Pub atmosphere and Louisiana Hospitality.
+    details: Available from 3 - 29 September 2018 – New Orleans flights included
+    price: 849
+    terms: New Orleans - British Airways Holidays offers five nights at the 4* InterContinental New Orleans from £849 per person, travelling on selected dates between September 3 - September 29 2018. Includes World Traveller return flights from London Heathrow and accommodation. Book by June 17, 2018. For reservations visit <a href="https://www.britishairways.com/en-gb/home">ba.com</a> or call 0344 493 0122.
+    link: https://www.britishairways.com/en-gb/destinations/hotel-information/New%20Orleans/InterContinental%20New%20Orleans/US-MSY-5255566&depDate=03-09-18
+---
+
+<div class="bg--dark">
+  <div class="container vpad--xxl">
+    <div class="width width--xl text--center">
+      <p class="text--md">{{page.intro}}</p>
+      <div class="space--md"></div>
+      <a id="track-intro-btn" href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--blue">Find lowest fares now</a>
+    </div>
+  </div>
+</div>
+
+<div class="container vpad--xxl">
+  {% for holiday in page.holidays %}
+    {% include offer/external-offer.html %}
+    <div class="space--xxl"></div>
+  {% endfor %}
+  <div class="text--center">
+    <a id="track-bottom-btn" href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--lg btn--blue">Book your New Orleans holiday</a>
+    <div class="space--lg"></div>
+    <img class="logo logo--atol" src="{{site.img}}/logo/atol.svg" alt="ATOL Protected logo">
+  </div>
+</div>

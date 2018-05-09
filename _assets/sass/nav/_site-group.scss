@@ -1,0 +1,48 @@
+// styles for the group drop down nav
+
+$group-nav-height: 300px;
+$group-nav-color:  rgba($nola-blue-darker,.5);
+$group-nav-bp:     610px;
+
+.group-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $z-nav;
+  display: flex;
+  justify-content: space-between;
+  height: $group-nav-height;
+  width: 100%;
+  background-color: rgba($group-nav-color,.8);
+  @include transition;
+  transform: scaleY(0);
+  transform-origin: top center;
+  @include bp($group-nav-bp){
+    .site-nav__item:hover & { transform: scaleY(1); }
+  }
+  .touch & { display: none; } // stops the drop down on touch devices
+  &__item {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    @include background-attributes;
+  }
+  &__link {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: $s0;
+    font-family: $font-title-01;
+    font-size: $s3;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: .05em;
+    color: $white;
+    @include transition;
+    &.is-current      { background-color: rgba($group-nav-color,.33); }
+    .no-touch &:hover { background-color: rgba($group-nav-color,.66); }
+    @include bp($lg){ font-size: $s4; }
+    @include bp($xxl){ font-size: $s5; }
+  }
+}

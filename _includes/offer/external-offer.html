@@ -1,0 +1,21 @@
+<div class="external-offer bg--light">
+  <div class="external-offer__col external-offer__img" style="background-image: url('{{site.img}}/content/{{page.id}}/offers/{{holiday.id}}.jpg')">
+    {% if holiday.video %}
+    <a href="{{site.baseurl}}/#video" class="icon video-icon">
+      <div class="video-icon__caption">Discover {{holiday.title}} in our New Orleans video</div>
+    </a>
+    {% endif %}
+    <a id="track-offer-image-{{holiday.id}}" class="external-offer__img-link" href="{{holiday.link}}"></a>
+  </div>
+  <div class="external-offer__col">
+    <div class="boxpad--xxl">
+      <h3 class="title title--sm text--bold">{{holiday.title}}</h3>
+      <p class="text--italic">{{holiday.description}}</p>
+      <p>From <span class="text--bolder text--xxl text--blue">£{{holiday.price}}</span> per person for 5 nights</p>
+      <div><p class="text--sm text--italic">{{holiday.details}}</p></div>
+      <div class="space--sm"></div>
+      <a id="track-offer-btn-{{holiday.id}}" href="{{holiday.link}}" class="btn btn--blue" id="tracking-offer-button-{{holiday.id}}">View Offer</a>
+      <p class="text--sm text--light"><a class="js-open-modal" data-open-modal="{{holiday.id}}">View offer terms & conditions</a></p>
+    </div>
+  </div>
+</div>

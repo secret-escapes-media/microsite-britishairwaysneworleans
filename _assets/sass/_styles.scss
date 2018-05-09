@@ -1,0 +1,189 @@
+// general styles for the project that wouldn't be a reuseable component
+
+.width {
+  margin-right: auto;
+  margin-left: auto;
+  &--xxs { max-width: ($sm / 3); }
+  &--xs { max-width: ($sm / 2); }
+  &--sm { max-width: $sm; }
+  &--md { max-width: $md; }
+  &--lg { max-width: $lg; }
+  &--xl { max-width: 720px; }
+  &--xxl { max-width: $xxl; }
+}
+
+
+.blog {
+  &__content {
+    p { overflow: auto; }
+    p + p { margin-top: $s0; }
+  }
+  &__image {
+    $image-extrude: 125px;
+    width: 100%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    @include bp($xxl){
+      max-width: 66%;
+      &--left {
+        float: left;
+        margin-right: 4%;
+        margin-left: -$image-extrude;
+      }
+      &--right {
+        float: right;
+        margin-left: 4%;
+        margin-right: -$image-extrude;
+      }
+    }
+  }
+  &__image-caption {
+    text-align: center;
+    font-weight: 400;
+    font-size: $s-1;
+    color: $grey-lighter;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: $s-3 0;
+    border-bottom: 1px solid rgba($white,0.2);
+  }
+}
+
+.author {
+  max-width: $lg;
+  padding: $s2;
+  background-color: rgba($nola-blue-darkest,.8);
+  text-align: center;
+  @include bp($md){
+    display: flex;
+    align-items: center;
+  }
+  &__image {
+    $image-size: 80px;
+    float: left;
+    width: $image-size;
+    margin-right: $s0;
+    border-radius: $image-size;
+    overflow: hidden;
+    @include bp($md){
+      float: none;
+      flex-shrink: 0;
+    }
+  }
+  &__description {
+    font-size: .878rem;
+    text-align: left;
+  }
+}
+
+
+.blog {
+  &__bg {
+    background-image: url('../img/content/blog/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 1920px 1000px;
+  }
+}
+
+
+.height-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  &__wrap {
+    position: relative;
+    height: 100%;
+  }
+}
+
+
+.video-icon {
+  $icon-size: 50px;
+  @include transition();
+  height: $icon-size;
+  width: $icon-size;
+  background-size: 50%;
+  background-image: url("../img/icons/video.svg");
+  background-color: $nola-blue;
+  border-radius: 50%;
+  position: absolute;
+  z-index: $z-overlay;
+  top: $s0;
+  left: $s0;
+  opacity: 0.8;
+  &:hover { background-color: $nola-blue; opacity: 1; }
+
+  // triangle on hover
+
+  &:before {
+    .no-touch & {
+      @include bp($md){
+        @include transition();
+        content: "";
+        display: block;
+        width: 0; height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 8px solid $nola-blue;
+        position: absolute;
+        top: 50%; margin-top: -8px;
+        left: $icon-size - 10px;;
+        opacity: 0;
+      }
+    }
+  }
+  &:hover:before {
+    left: $icon-size - 2px;
+    opacity: 1;
+  }
+
+  // hover caption - disabled on touch device as no hover
+  &__caption {
+    display: none;
+    .no-touch & {
+      @include bp($md){
+        display: block;
+        @include transition();
+        height: $icon-size/1.5;
+        padding: 7px $s-1;
+        font-weight: 400;
+        font-size: $s-1;
+        color: $grey-lighter;
+        white-space: nowrap;
+        border-radius: 4px;
+        background-color: $nola-blue;
+        position: absolute;
+        left: $icon-size;
+        top: $icon-size/6;
+        opacity: 0;
+      }
+    }
+  }
+  &:hover &__caption {
+    left: $icon-size + 10px;
+    opacity: 1;
+  }
+}
+
+
+.border {
+  border-top: 1px solid #3e4452;
+}
+
+.local-pick {
+  position: relative;
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-content-upper;
+  }
+}
+
+.hide-overflow { overflow: hidden; }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include page/head.html %}
+
+  <body class="blog__bg">
+
+    {% include components/tracking.html %}
+
+    {% include page/header.html %}
+
+    <div class="site-header__offset"></div>
+    <div class="site-nav__offset"></div>
+
+    <div class="content-spacing section-spacing">
+      {{ content }}
+    </div>
+
+    {% include page/promo-flights.html %}
+
+    {% include page/footer.html %}
+
+    {% include modal/modal.html %}
+
+  </body>
+
+</html>
