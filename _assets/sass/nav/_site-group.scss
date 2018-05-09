@@ -2,6 +2,7 @@
 
 $group-nav-height: 300px;
 $group-nav-color:  rgba($nola-blue-darker,.5);
+$group-nav-bp:     610px;
 
 .group-nav {
   position: absolute;
@@ -16,9 +17,10 @@ $group-nav-color:  rgba($nola-blue-darker,.5);
   @include transition;
   transform: scaleY(0);
   transform-origin: top center;
-  @include bp($nav-width-bp){
+  @include bp($group-nav-bp){
     .site-nav__item:hover & { transform: scaleY(1); }
   }
+  .touch & { display: none; } // stops the drop down on touch devices
   &__item {
     display: flex;
     flex-grow: 1;
@@ -32,7 +34,7 @@ $group-nav-color:  rgba($nola-blue-darker,.5);
     justify-content: center;
     padding: $s0;
     font-family: $font-title-01;
-    font-size: $s5;
+    font-size: $s3;
     font-weight: 400;
     text-align: center;
     letter-spacing: .05em;
@@ -40,5 +42,7 @@ $group-nav-color:  rgba($nola-blue-darker,.5);
     @include transition;
     &.is-current      { background-color: rgba($group-nav-color,.33); }
     .no-touch &:hover { background-color: rgba($group-nav-color,.66); }
+    @include bp($lg){ font-size: $s4; }
+    @include bp($xxl){ font-size: $s5; }
   }
 }

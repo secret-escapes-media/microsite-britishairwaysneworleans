@@ -112,8 +112,8 @@
   border-radius: 50%;
   position: absolute;
   z-index: $z-overlay;
-  top: $s2;
-  left: $s2;
+  top: $s0;
+  left: $s0;
   opacity: 0.8;
   &:hover { background-color: $nola-blue; opacity: 1; }
 
@@ -121,17 +121,19 @@
 
   &:before {
     .no-touch & {
-      @include transition();
-      content: "";
-      display: block;
-      width: 0; height: 0;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 8px solid $nola-blue;
-      position: absolute;
-      top: 50%; margin-top: -8px;
-      left: $icon-size - 10px;;
-      opacity: 0;
+      @include bp($md){
+        @include transition();
+        content: "";
+        display: block;
+        width: 0; height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 8px solid $nola-blue;
+        position: absolute;
+        top: 50%; margin-top: -8px;
+        left: $icon-size - 10px;;
+        opacity: 0;
+      }
     }
   }
   &:hover:before {
@@ -143,20 +145,22 @@
   &__caption {
     display: none;
     .no-touch & {
-      display: block;
-      @include transition();
-      height: $icon-size/1.5;
-      padding: 7px $s-1;
-      font-weight: 400;
-      font-size: $s-1;
-      color: $grey-lighter;
-      white-space: nowrap;
-      border-radius: 4px;
-      background-color: $nola-blue;
-      position: absolute;
-      left: $icon-size;
-      top: $icon-size/6;
-      opacity: 0;
+      @include bp($md){
+        display: block;
+        @include transition();
+        height: $icon-size/1.5;
+        padding: 7px $s-1;
+        font-weight: 400;
+        font-size: $s-1;
+        color: $grey-lighter;
+        white-space: nowrap;
+        border-radius: 4px;
+        background-color: $nola-blue;
+        position: absolute;
+        left: $icon-size;
+        top: $icon-size/6;
+        opacity: 0;
+      }
     }
   }
   &:hover &__caption {
@@ -181,3 +185,5 @@
     z-index: $z-content-upper;
   }
 }
+
+.hide-overflow { overflow: hidden; }

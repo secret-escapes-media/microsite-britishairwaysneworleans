@@ -2,7 +2,7 @@
 
 $site-nav-height:    56px;
 $site-nav-height-sm: 44px;
-$nav-width-bp:       640px;
+$nav-width-bp:       460px;
 $nav-color:          rgba($nola-blue-darker,.25);
 
 
@@ -84,8 +84,8 @@ $nav-color:          rgba($nola-blue-darker,.25);
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-    padding-left: $s2;
-    padding-right: $s2;
+    padding-left: $s4;
+    padding-right: $s4;
     font-family: $font-core;
     font-weight: 400;
     font-size: 11px;

@@ -39,7 +39,7 @@ holidays:
     <div class="width width--xl text--center">
       <p class="text--md">{{page.intro}}</p>
       <div class="space--md"></div>
-      <a href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--blue">Find lowest fares now</a>
+      <a id="track-intro-btn" href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--blue">Find lowest fares now</a>
     </div>
   </div>
 </div>
@@ -50,14 +50,8 @@ holidays:
     <div class="space--xxl"></div>
   {% endfor %}
   <div class="text--center">
-    <a href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--lg btn--blue">Book your New Orleans holiday</a>
+    <a id="track-bottom-btn" href="https://www.britishairways.com/en-gb/destinations/new-orleans" class="btn btn--lg btn--blue">Book your New Orleans holiday</a>
     <div class="space--lg"></div>
     <img class="logo logo--atol" src="{{site.img}}/logo/atol.svg" alt="ATOL Protected logo">
   </div>
 </div>
-
-
-
-<!-- <div class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{page.id}}/offers/{{holiday.id}}.jpg')">
-  <a id="tracking-offer-image-{{holiday.id}}" class="bg-img__link" href="{{holiday.link}}"></a>
-</div> -->

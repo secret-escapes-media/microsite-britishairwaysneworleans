@@ -71,6 +71,7 @@
   &--sm    { padding-top: $s-1; }
   &--xs    { padding-top: $s-3; }
   &--xxs   { padding-top: $s-5; }
+  &--xxxs  { padding-top: $s-10; }
   @include bp($lg) {
     &--xxxxl { padding-top: $s12; }
     &--xxxl  { padding-top: $s10; }
@@ -81,6 +82,7 @@
     &--sm    { padding-top: $s0; }
     &--xs    { padding-top: $s-2; }
     &--xxs   { padding-top: $s-4; }
+    &--xxxs  { padding-top: $s-8; }
   }
 }
 

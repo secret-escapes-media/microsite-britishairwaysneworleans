@@ -2,5 +2,13 @@
 // need to put a friendly reminder where the g fonts snippet needs to go in the whole site
 // additional families need to included in includes > page > head
 
+@font-face {
+  font-family: 'Coustard';
+  src: url('../font/Coustard-Regular.woff2') format('woff2'),
+       url('../font/Coustard-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $font-core: 'Open Sans', 'Helvetica Neue', sans-serif;
 $font-title-01: 'Coustard', 'Rockwell', serif;

@@ -7,28 +7,30 @@ title: Overview
 
 banner:
   content: >
-    <div class="container text--center">
+    <div class="container container--no-padding text--center">
       <h1 class="banner-title banner-title--overview">New<br>Orleans</h1>
       <div class="space--sm"></div>
-      <a href="#video" id="video-overview-button" class="btn btn--lg btn--blue">Watch Video</a>
+      <a href="#video" id="track-play-video-overview" class="js-play-feature-video btn btn--lg btn--blue">Watch Video</a>
     </div>
 ---
 
 <div class="container vpad--xxl">
   <div class="row row--valign-center">
     <div class="col col--xl-5">
-      <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/01.jpg');">
-        <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
-      </div>
-      <div class="row row--constant-6-6 row--no-gutters">
-        <div class="col">
-          <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/02.jpg');">
-            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
-          </div>
+      <div class="width width--lg">
+        <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/01.jpg');">
+          <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
         </div>
-        <div class="col">
-          <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/03.jpg');">
-            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+        <div class="row row--constant-6-6 row--no-gutters">
+          <div class="col">
+            <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/02.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/overview/03.jpg');">
+              <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -48,12 +50,12 @@ banner:
 
     <div class="width width--xxl text--center">
       <div class="title title--xl">Watch our New Orleans adventure</div>
-      <p class="text--xl width width--lg">Let our editor Ollie Jones show you around the Crescent City…</p>
+      <p class="text--lg width width--lg">Let our editor Ollie Jones show you around the Crescent City…</p>
       <div class="space--xl"></div>
     </div>
 
-    <div class="video js-youtube-thumbnail" id="video-overview" data-thumbnail-img="{{site.img}}/content/overview/video.jpg">
-      <iframe class="video__iframe" src='https://www.youtube.com/embed/kkn2z2uWpgU?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
+    <div class="video js-youtube-thumbnail js-autoplay" id="video-overview" data-thumbnail-img="{{site.img}}/content/overview/video.jpg">
+      <iframe class="video__iframe" src='https://www.youtube.com/embed/unInkhcjVZk?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
     </div>
 
     </div>
@@ -99,13 +101,11 @@ banner:
       {% assign content-pages = site.html_pages | where: 'group-parent', 'explore' | sort: 'group-order' %}
       {% for page in content-pages %}
       <div class="col">
-        <div class="width width--sm">
-          <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/content/{{page.id}}/bg.jpg');">
-            <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
-            <div class="bg-img__bg-overlay"></div>
-            <div class="bg-img__content">
-              <div class="title title--lg">{{page.nav-title}}</div>
-            </div>
+        <div class="bg-img bg-img--1-1" style="background-image: url('{{site.img}}/content/{{page.id}}/bg.jpg');">
+          <a href="{{site.baseurl}}{{page.url}}" class="bg-img__link"></a>
+          <div class="bg-img__bg-overlay"></div>
+          <div class="bg-img__content">
+            <div class="title title--lg">{{page.nav-title}}</div>
           </div>
         </div>
       </div>

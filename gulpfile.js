@@ -108,7 +108,7 @@ gulp.task('build-main-js', function(cb) {
 
     // plugins
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/jquery-countdown/dist/jquery.countdown.min.js',
+    // './node_modules/jquery-countdown/dist/jquery.countdown.min.js',
     // './node_modules/waypoints/lib/jquery.waypoints.min.js',
 
     // custom js - with on doc ready wrapper
@@ -116,9 +116,9 @@ gulp.task('build-main-js', function(cb) {
 
     // components
     './_assets/js/_components/standard.js',
-    './_assets/js/_components/offer-countdown.js',
+    // './_assets/js/_components/offer-countdown.js',
     './_assets/js/_components/modal.js',
-    './_assets/js/_components/modal-nav.js',
+    // './_assets/js/_components/modal-nav.js',
     './_assets/js/_components/video.js',
     // './_assets/js/_components/sticky-nav.js',
 
@@ -148,6 +148,11 @@ gulp.task('build-js', function(cb) {
 gulp.task('build-images', function(cb) {
   return gulp.src('./_assets/img/**/*.*')
   .pipe(gulp.dest('./_site/_assets/img/'))
+});
+
+gulp.task('build-fonts', function(cb) {
+  return gulp.src('./_assets/font/**/*.*')
+  .pipe(gulp.dest('./_site/_assets/font/'))
 });
 
 
@@ -207,7 +212,8 @@ gulp.task('default', gulpSequence(
     'watch-sass',
     'watch-main-js',
     'watch-js',
-    'watch-images'
+    'watch-images',
+    'build-fonts'
   ])
 );
 
@@ -219,7 +225,8 @@ gulp.task('build', gulpSequence(
     'build-sass',
     'build-main-js',
     'build-js',
-    'build-images'
+    'build-images',
+    'build-fonts'
   ],
   [
     'clean-sourcemaps',

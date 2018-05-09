@@ -5,7 +5,7 @@
       <div class="video-icon__caption">Discover {{holiday.title}} in our New Orleans video</div>
     </a>
     {% endif %}
-    <a class="external-offer__img-link" href="{{holiday.link}}"></a>
+    <a id="track-offer-image-{{holiday.id}}" class="external-offer__img-link" href="{{holiday.link}}"></a>
   </div>
   <div class="external-offer__col">
     <div class="boxpad--xxl">
@@ -14,7 +14,7 @@
       <p>From <span class="text--bolder text--xxl text--blue">£{{holiday.price}}</span> per person for 5 nights</p>
       <div><p class="text--sm text--italic">{{holiday.details}}</p></div>
       <div class="space--sm"></div>
-      <a href="{{holiday.link}}" class="btn btn--blue" id="tracking-offer-button-{{holiday.id}}">View Offer</a>
+      <a id="track-offer-btn-{{holiday.id}}" href="{{holiday.link}}" class="btn btn--blue" id="tracking-offer-button-{{holiday.id}}">View Offer</a>
       <p class="text--sm text--light"><a class="js-open-modal" data-open-modal="{{holiday.id}}">View offer terms & conditions</a></p>
     </div>
   </div>
