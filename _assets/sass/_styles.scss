@@ -118,7 +118,6 @@
   &:hover { background-color: $nola-blue; opacity: 1; }
 
   // triangle on hover
-
   &:before {
     .no-touch & {
       @include bp($md){
@@ -187,3 +186,10 @@
 }
 
 .hide-overflow { overflow: hidden; }
+
+.play-icon {
+  max-width: 100px;
+  @include transition;
+  @include bp($xl){ max-width: 130px; }
+  &:hover { transform: scale(1.15); }
+}

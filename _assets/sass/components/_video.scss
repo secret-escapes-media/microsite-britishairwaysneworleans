@@ -3,7 +3,6 @@
 .video {
   @include transition();
   position: relative;
-  max-width: $xxl;
   background-color: #000;
   overflow: hidden;
   margin: auto;
@@ -14,7 +13,6 @@
     width: 100%;
     padding-bottom: 56.25%;
   }
-  &.is-active { max-width: 100%; }
   &__iframe {
     position: absolute;
     top: 0;
